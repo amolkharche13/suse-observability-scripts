@@ -93,4 +93,4 @@ archive_and_cleanup() {
 collect_pod_logs
 collect_yaml_configs
 archive_and_cleanup
-echo "All information collected in the $ARCHIVE_FILE.."
+echo "All information collected in the $ARCHIVE_FILE"
