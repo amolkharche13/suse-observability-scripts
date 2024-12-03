@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Namespace to collect information from
 NAMESPACE="suse-observability"
 
 # Directory to store logs
