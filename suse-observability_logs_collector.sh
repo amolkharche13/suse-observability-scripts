@@ -14,7 +14,6 @@ echo "Collecting node details..."
 kubectl get nodes -o wide > "$OUTPUT_DIR/nodes_status"
 kubectl describe nodes > "$OUTPUT_DIR/nodes_describe"
 
-# Function to collect pod logs
 
 collect_yaml_configs() {
     echo "Collecting YAML configurations..."
@@ -38,6 +37,8 @@ collect_yaml_configs() {
 
     echo "YAML configurations collected."
 }
+
+# Function to collect pod logs
 collect_pod_logs() {
     echo "Collecting pod logs..."
     PODS=$(kubectl -n "$NAMESPACE" get pods -o jsonpath="{.items[*].metadata.name}")
