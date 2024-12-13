@@ -42,7 +42,6 @@ else
     echo -e "\033[32mNo existing Helm release found. Proceeding with deployment...\033[0m"
 fi
 
-
 echo -e "\n\033[32mAdding suse observability repository ... \033[0m"
 helm repo add suse-observability https://charts.rancher.com/server-charts/prime/suse-observability
 
