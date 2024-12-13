@@ -2,6 +2,19 @@
 
 NAMESPACE="suse-observability"
 
+# Check if kubectl is installed or not
+if ! command -v kubectl &>/dev/null; then
+   echo "kubectl is not installed. Please install it and try again."
+   exit 1
+fi
+
+# Check if KUBECONFIG is set
+if [[ -z "$KUBECONFIG" || ! -f "$KUBECONFIG" ]]; then
+    echo "Error: KUBECONFIG is not set. Please ensure KUBECONFIG is set to the path of a valid kubeconfig file before running this script."
+    echo "If kubeconfig is not set, use the command: export KUBECONFIG=PATH-TO-YOUR/kubeconfig. Exiting..."
+ exit 1
+fi
+
 echo -e "\n\033[36mWelcome to the SUSE Observability setup script!\033[0m"
 echo -e "\033[33mPlease follow the instructions carefully.\033[0m"
 
