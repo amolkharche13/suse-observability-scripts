@@ -91,7 +91,7 @@ if [[ "$values_response" =~ ^(yes|y)$ ]]; then
         echo -e "\033[31mError: File not found '$values_file'. Please check the path.\033[0m"
         exit 1
     fi
-    echo -e "\n\033[33mUProceeding using extra values file: $values_file \033[0m"
+    echo -e "\n\033[33mProceeding using extra values file: $values_file \033[0m"
     echo -e "\033[33mSit back and relax , We are installing SUSE Observability cluster : \033[0m \n"
     helm upgrade --install --namespace suse-observability --values $VALUES_DIR/suse-observability-values/templates/baseConfig_values.yaml --values $VALUES_DIR/suse-observability-values/templates/sizing_values.yaml --values "${values_file}" suse-observability suse-observability/suse-observability
 else
