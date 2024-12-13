@@ -1,5 +1,4 @@
 #!/bin/bash
-# suse observability 1.x logs collector
 
 # Namespace to collect information
 NAMESPACE="suse-observability"
