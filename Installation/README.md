@@ -2,7 +2,6 @@
 
 The primary goal is to eliminate the need for manual installation.  This script is designed to simplify the installation of the SUSE-Observability cluster.  
 
-
 The script should be executed from a host that has `kubectl` configured with access to the kubernetes cluster or from any other host with the necessary permissions and connectivity to the kubernetes cluster. 
 If kubeconfig is not set, use the command `export KUBECONFIG=$PATH-TO-YOUR/kubeconfig`.
 
