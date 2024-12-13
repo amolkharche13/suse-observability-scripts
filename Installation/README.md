@@ -5,6 +5,10 @@ The primary goal is to eliminate the need for manual installation.  This script 
 The script should be executed from a host that has `kubectl` configured with access to the kubernetes cluster or from any other host with the necessary permissions and connectivity to the kubernetes cluster. 
 If kubeconfig is not set, use the command `export KUBECONFIG=$PATH-TO-YOUR/kubeconfig`.
 
+{% hint style="warning" %}
+This script is not intended for use in air-gapped environments.
+{% endhint %} 
+
 Before running the script, ensure you have the following ready:  
 - **License key** : The SUSE Observability license key from SCC portal.
 - **Base URL** : The external URL for SUSE Observability that users and agents will use to connect. 
