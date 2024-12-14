@@ -17,11 +17,11 @@ Before running the script, ensure you have the following ready:
 
   Using `wget`:
     ```bash
-    wget https://github.com/amolkharche13/suse-observability-scripts/blob/main/Installation/SOinstallation.sh
+    wget https://raw.githubusercontent.com/amolkharche13/suse-observability-scripts/refs/heads/main/Installation/SOinstallation.sh
     ```
   Using `curl`:
     ```bash
-    curl -OLs https://github.com/amolkharche13/suse-observability-scripts/blob/main/Installation/SOinstallation.sh
+    curl -OLs https://raw.githubusercontent.com/amolkharche13/suse-observability-scripts/refs/heads/main/Installation/SOinstallation.sh
     ```
  
 * Run the script using following commands:
