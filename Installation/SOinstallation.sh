@@ -14,6 +14,11 @@ if [[ -z "$KUBECONFIG" || ! -f "$KUBECONFIG" ]]; then
     echo "If kubeconfig is not set, use the command: export KUBECONFIG=PATH-TO-YOUR/kubeconfig. Exiting..."
  exit 1
 fi
+kubectl cluster-info dump > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+  echo "Error: Unable to connect to the Kubernetes cluster. Exiting script."
+  exit 1
+fi
 
 echo -e "\n\033[36mWelcome to the SUSE Observability setup script!\033[0m"
 echo -e "\033[33mPlease follow the instructions carefully.\033[0m"
