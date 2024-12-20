@@ -29,33 +29,12 @@ echo -e "\n\033[33mChecking for existing StorageClasses in the cluster...\033[0m
 existing_storageclass=$(kubectl get storageclass --no-headers 2>/dev/null)
 
 if [[ -z "$existing_storageclass" ]]; then
-    echo -e "\nNo StorageClass found in the cluster."
-    echo  "Would you like to install a StorageClass?"
-    echo  "1. Install SUSE Storage (Longhorn)"
-    echo  "2. Install local-path-provisioner"
-    echo  "3. Exit"
-    read -p "Enter your choice (1/2/3): " choice
-
-    case $choice in
-        1)
-            echo -e "Installing SUSE Storage (Longhorn)..."
-            kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/v1.7.2/deploy/longhorn.yaml
-            echo -e "SUSE Storage (Longhorn) installation initiated. Please refer Documentation for more info: https://longhorn.io/docs "
-            ;;
-        2)
-            echo -e "Installing local-path-provisioner..."
-            kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.30/deploy/local-path-storage.yaml
-            echo -e "local-path-provisioner installation initiated. Feel free to check repository: https://github.com/rancher/local-path-provisioner"
-            ;;
-        3)
-            echo -e "Exiting without installing a StorageClass."
-            exit 0
-            ;;
-        *)
-            echo -e  "Invalid choice. Please run the script again."
-            exit 1
-            ;;
-    esac
+   echo -e "\nYou can install one of the following Storage solutions:"
+   echo -e "\n1. SUSE Storage (Longhorn):"
+   echo -e "   Documentation: https://longhorn.io/docs/1.7.2/deploy/install/install-with-helm/"
+   echo -e "\n2. Local Path Provisioner:"
+   echo -e "   Documentation: https://github.com/rancher/local-path-provisioner"
+   exit 1
 else
     echo -e "\n\033[32mStorageClass already exists in the cluster:\033[0m"
     echo "$existing_storageclass"
